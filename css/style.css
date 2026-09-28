@@ -92,7 +92,7 @@ h6 {
     display: inline-block;
     background-color: var(--accent-color);
     color: #000;
-    padding: rem 2rem;
+    padding: 1rem 2rem;
     font-size: 0.85rem;
     font-weight: 600;
     font-family: var(--font-body);
