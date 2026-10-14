@@ -29,7 +29,7 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#location">Location</a></li>
                 <li><a href="#builder">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <!-- <li><a href="#contact">Contact</a></li> -->
             </ul>
         </nav>
         <div class="header-actions">
@@ -42,51 +42,66 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-bg">
+            <img src="images/hero-ai-tower.jpg"
+                alt="Godrej Verano luxury residential towers at dusk" class="hero-slide active">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
+                alt="Godrej Verano luxury residence at dusk" class="hero-slide">
+            <!-- <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1920&q=80"
+                alt="Godrej Verano contemporary villa with private pool" class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80"
+                alt="Godrej Verano resort-style pool at night" class="hero-slide"> -->
+            <div class="hero-overlay"></div>
+        </div>
+
         <div class="hero-content">
             <div class="hero-text-area">
-                <span class="subtitle">Gurgaon</span>
-                <h1 class="hero-title">GODREJ VERANO</h1>
+                <span class="subtitle">Sector 63A &middot; Gurgaon</span>
+                <h1 class="hero-title">Godrej <em>Verano</em></h1>
                 <p>3, 4 & 5 BHK + S Apartments, Penthouses in Sector 63A. Starting at ₹ 5.5 Cr* Onwards.</p>
-                <a href="#" class="btn-primary">Download Brochure</a>
-            </div>
-            <div class="hero-image-area">
-                <div class="hero-slider-container">
-                    <img src="https://www.constructionweekonline.in/cloud/2023/04/09/A-3-scaled.jpg"
-                        alt="Godrej Verano 1" class="hero-slide active">
-                    <img src="https://images.pexels.com/photos/9253338/pexels-photo-9253338.jpeg?cs=srgb&dl=pexels-mindaugasskrupskelis-9253338.jpg&fm=jpg"
-                        alt="Godrej Verano 2" class="hero-slide">
-                    <img src="https://theacademic.com/wp-content/uploads/2024/03/207_article_pic.png"
-                        alt="Godrej Verano 3" class="hero-slide">
+                <div class="hero-actions">
+                    <a href="#" class="btn-primary">Download Brochure</a>
+                    <a href="#" class="btn-ghost">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div class="hero-slider-info">
-                    <div class="slider-controls">
-                        <span class="current">01</span><span class="total">/03</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 33%;"></div>
-                        </div>
+            </div>
+
+            <div class="slider-controls">
+                <span class="current">01</span>
+                <div class="progress-bar">
+                    <div class="progress" style="height: 25%;"></div>
+                </div>
+                <span class="total">02</span>
+            </div>
+        </div>
+
+        <div class="hero-slider-info">
+            <div class="slider-features">
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-building"></i></div>
+                    <div>
+                        <h4>Typology</h4>
+                        <p>3, 4, 5 BHK & Penthouses</p>
                     </div>
-                    <div class="slider-features">
-                        <div class="feature">
-                            <div class="feature-icon"><i class="fa-solid fa-building"></i></div>
-                            <div>
-                                <h4>Typology</h4>
-                                <p>3, 4, 5 BHK & Penthouses</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Sector 63A, Gurgaon</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon"><i class="fa-solid fa-tag"></i></div>
-                            <div>
-                                <h4>Price</h4>
-                                <p>₹ 5.5 Cr* Onwards</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Sector 63A, Gurgaon</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-tag"></i></div>
+                    <div>
+                        <h4>Price</h4>
+                        <p>₹ 5.5 Cr* Onwards</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-wallet"></i></div>
+                    <div>
+                        <h4>Payment Plan</h4>
+                        <p>Flexible Plans</p>
                     </div>
                 </div>
             </div>
@@ -879,8 +894,8 @@
 
             // Hero Image Slider Logic
             const heroSlides = document.querySelectorAll('.hero-slide');
-            const heroCurrentSpan = document.querySelector('.hero-slider-info .current');
-            const heroProgressBar = document.querySelector('.hero-slider-info .progress');
+            const heroCurrentSpan = document.querySelector('.slider-controls .current');
+            const heroProgressBar = document.querySelector('.slider-controls .progress');
             if (heroSlides.length > 0) {
                 let currentSlide = 0;
                 setInterval(() => {
@@ -892,14 +907,14 @@
                         heroCurrentSpan.textContent = '0' + (currentSlide + 1);
                     }
                     if (heroProgressBar) {
-                        heroProgressBar.style.width = ((currentSlide + 1) / heroSlides.length * 100) + '%';
+                        heroProgressBar.style.height = ((currentSlide + 1) / heroSlides.length * 100) + '%';
                     }
                 }, 4000);
             }
 
             // Modal Logic
             const modal = document.getElementById("enquiryModal");
-            const btns = document.querySelectorAll(".btn-primary, .btn-login, .action-enquire");
+            const btns = document.querySelectorAll(".btn-primary, .btn-ghost, .btn-login, .action-enquire");
             const span = document.querySelector(".close-modal");
 
             if (modal && span) {
@@ -934,6 +949,113 @@
                 btnText.innerHTML = "Read more";
             }
         }
+    </script>
+    <!-- Luxury motion: scroll reveals, counters, scroll progress, background drift -->
+    <script>
+        (function () {
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // gold progress line at the top of the page
+            var progress = document.createElement('div');
+            progress.className = 'scroll-progress';
+            document.body.appendChild(progress);
+
+            // [selector, reveal variant, stagger step in seconds]
+            var groups = [
+                ['.section-title', '', 0],
+                ['.about-image', 'reveal-mask', 0],
+                ['.about-col', '', 0.15],
+                ['.highlight-item', '', 0.08],
+                ['.price-row', '', 0.07],
+                ['.fp-tabs, .fp-tab-list', 'reveal-left', 0],
+                ['.fp-panels, .fp-content', 'reveal-right', 0],
+                ['.portfolio-item', 'reveal-zoom', 0.1],
+                ['.gallery-item', 'reveal-zoom', 0.08],
+                ['.feature-item', '', 0.1],
+                ['.builder-text-area p', '', 0.1],
+                ['.stat-item', '', 0.12],
+                ['.builder-image', 'reveal-right', 0],
+                ['.disclaimer-footer .footer-content-wrap', '', 0]
+            ];
+
+            var targets = [];
+            groups.forEach(function (g) {
+                var els = document.querySelectorAll(g[0]);
+                els.forEach(function (el, i) {
+                    if (el.closest('.hero')) return;
+                    el.classList.add('reveal');
+                    if (g[1]) el.classList.add(g[1]);
+                    // restart the stagger every 4 items so long lists don't lag
+                    if (g[2]) el.style.setProperty('--d', ((i % 4) * g[2]).toFixed(2) + 's');
+                    targets.push(el);
+                });
+            });
+
+            function countUp(el) {
+                var raw = el.textContent.trim();
+                var match = raw.match(/^(\d+)(.*)$/);
+                if (!match || reduceMotion) return;
+                var end = parseInt(match[1], 10), suffix = match[2], start = null, dur = 1800;
+                function step(ts) {
+                    if (!start) start = ts;
+                    var p = Math.min((ts - start) / dur, 1);
+                    var eased = 1 - Math.pow(1 - p, 3);
+                    el.textContent = Math.round(end * eased) + suffix;
+                    if (p < 1) requestAnimationFrame(step);
+                }
+                el.textContent = '0' + suffix;
+                requestAnimationFrame(step);
+            }
+
+            function show(el) {
+                el.classList.add('is-visible');
+                var num = el.querySelector('.stat-number');
+                if (num) countUp(num);
+            }
+
+            if ('IntersectionObserver' in window && !reduceMotion) {
+                // a fully clipped element reports zero visible area, so masked
+                // reveals are triggered by watching their parent instead
+                var watched = new Map();
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) return;
+                        (watched.get(entry.target) || []).forEach(show);
+                        watched.delete(entry.target);
+                        io.unobserve(entry.target);
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+                targets.forEach(function (el) {
+                    var masked = el.classList.contains('section-title') || el.classList.contains('reveal-mask');
+                    var watch = masked ? el.parentElement : el;
+                    if (!watched.has(watch)) { watched.set(watch, []); io.observe(watch); }
+                    watched.get(watch).push(el);
+                });
+            } else {
+                targets.forEach(function (el) { el.classList.add('is-visible'); });
+            }
+
+            // scroll progress + slow drift of the faint background words
+            var bgTexts = document.querySelectorAll('.bg-text');
+            var ticking = false;
+            function onScroll() {
+                var doc = document.documentElement;
+                var max = doc.scrollHeight - window.innerHeight;
+                progress.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+                if (!reduceMotion) {
+                    bgTexts.forEach(function (t) {
+                        var r = t.parentElement.getBoundingClientRect();
+                        var offset = (r.top + r.height / 2 - window.innerHeight / 2) * 0.08;
+                        t.style.setProperty('--drift', offset.toFixed(1) + 'px');
+                    });
+                }
+                ticking = false;
+            }
+            window.addEventListener('scroll', function () {
+                if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+            }, { passive: true });
+            onScroll();
+        })();
     </script>
 </body>
 
